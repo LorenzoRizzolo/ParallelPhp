@@ -1,0 +1,19 @@
+{
+    "name": "parallel/parallel",
+    "description": "PHP library for execute functions in parallel.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Parallel\\Parallel\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "lorenzorizzolo",
+            "email": "lolloriz36@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
