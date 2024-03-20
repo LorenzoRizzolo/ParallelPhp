@@ -12,8 +12,11 @@ class Thread {
         } elseif ($pid) {
             $this->pid = $pid;
         } else {
+            // Chiude lo standard output
             fclose(STDOUT);
-            $STDOUT = fopen('/dev/null', 'w');
+            // Apre /dev/null o NUL a seconda del sistema operativo
+            $outputFile = strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? 'NUL' : '/dev/null';
+            $STDOUT = fopen($outputFile, 'w');
             call_user_func($function);
             exit();
         }
