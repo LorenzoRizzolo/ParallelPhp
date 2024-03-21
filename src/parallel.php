@@ -20,23 +20,23 @@ class Thread {
      * @param callable function $function is the function to allocate into the new process
      */
     public function start(callable $function, array $args = []) {
-        $pid = pcntl_fork();
-        if ($pid == -1) {
-            error_log('Could not fork');
-            exit();
-        } elseif ($pid) {
-            $this->pid = $pid;
+    $pid = pcntl_fork();
+    if ($pid == -1) {
+        error_log('Could not fork');
+        exit();
+    } elseif ($pid) {
+        $this->pid = $pid;
+    } else {
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            $this->startOnWin($function, $args);
         } else {
-            if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-                $this->startOnWin($function, $args);
-            } else {
-                $this->startOnUnix($function, $args);
-            }
-            exit();
+            $this->startOnUnix($function, $args);
         }
-        return $pid;
+        exit();
     }
-    
+    return $pid;
+}
+
 
     /**
      * startOnUnix is used to start the process on unix system like Linux or MacOS
