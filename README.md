@@ -27,4 +27,4 @@ composer example_N
 
 
 # ⚖️ License
-This project is under the [MIT License](https://github.com/TelegramSDK/BotAPI/blob/main/LICENSE).
+This project is under the [MIT License](https://github.com/LorenzoRizzolo/ParallelPhp/blob/main/LICENSE).
