@@ -30,8 +30,8 @@
         "php": ">=8.0"
     },
     "scripts": {
-        "example01": "php examples/example_01.php",
-        "example02": "php examples/example_02.php",
-        "example03": "php examples/example_03.php"
+        "example_01": "php examples/example_01.php",
+        "example_02": "php examples/example_02.php",
+        "example_03": "php examples/example_03.php"
     }
 }

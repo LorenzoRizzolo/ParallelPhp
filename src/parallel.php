@@ -19,7 +19,7 @@ class Thread {
      * It starts the new child process on another thread
      * @param callable function $function is the function to allocate into the new process
      */
-    public function start(callable $function, array $args = []) {
+    public function start(callable $function) {
         $pid = pcntl_fork();
         if ($pid == -1) {
             error_log('Could not fork');
@@ -28,9 +28,9 @@ class Thread {
             $this->pid = $pid;
         } else {
             if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-                $this->startOnWin($function, $args);
+                $this->startOnWin($function);
             } else {
-                $this->startOnUnix($function, $args);
+                $this->startOnUnix($function);
             }
             exit();
         }
