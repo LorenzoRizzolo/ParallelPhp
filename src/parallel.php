@@ -42,13 +42,13 @@ class Thread {
      * startOnUnix is used to start the process on unix system like Linux or MacOS
      */
     private function startOnUnix(callable $function) {
-        fclose(STDOUT);
-        $outputFile = '/dev/null';
-        $STDOUT = fopen($outputFile, 'w');
-        if (!$STDOUT) {
-            error_log('Failed to open ' . $outputFile . ' for writing');
-            exit();
-        }
+        // fclose(STDOUT);
+        // $outputFile = '/dev/null';
+        // $STDOUT = fopen($outputFile, 'w');
+        // if (!$STDOUT) {
+        //     error_log('Failed to open ' . $outputFile . ' for writing');
+        //     exit();
+        // }
         call_user_func($function);
     }
 
