@@ -17,6 +17,30 @@ You can install the package using composer:
 composer require parallel/parallel
 ```
 
+# ❔ Usage
+After installation yoi can use this library using composer:
+```php
+// require the autoload file of vendor to import the library
+require_once __DIR__."/vendor/autoload.php";
+
+// select the class in the name space parallel/parallel
+use parallel\parallel\Thread;
+
+// create the new object of Thread class
+$thread = new Thread();
+
+// create a function to esecute in background
+function function_name(){  }
+
+// you can pass an existing function as parameter or create a new function directly when you call the method start
+$thread->start('function_name');
+$thread->start(function(){  });
+
+// if you use the method join it will wait the end of the new process created and then it will continue with the code.
+$thread->join();
+
+```
+
 # 📝 Testing
 There are few tests ready for use in test/ directory
 Try some examples:
