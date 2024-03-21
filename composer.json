@@ -1,19 +1,32 @@
 {
     "name": "parallel/parallel",
     "description": "PHP library for execute functions in parallel.",
+    "keywords": [
+        "parallel",
+        "async",
+        "threads",
+        "time"
+    ],
     "type": "library",
     "license": "MIT",
     "autoload": {
+        "classmap": [
+          "src/"
+        ]
+    },
+    "autoload-dev": {
         "psr-4": {
-            "Parallel\\Parallel\\": "src/"
+          "TelegramSDK\\BotAPI\\Tests\\": "tests/"
         }
     },
     "authors": [
         {
             "name": "lorenzorizzolo",
-            "email": "lolloriz36@gmail.com"
+            "email": "lolloriz36@gmail.com",
+            "role": "developer"
         }
     ],
-    "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=8.0"
+    }
 }
